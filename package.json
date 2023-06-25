@@ -1,0 +1,28 @@
+{
+  "name": "api-rest-libreria",
+  "version": "1.0.0",
+  "description": "Tarea integradora de xAcademy",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macarenabarrios/API-REST-libreria.git"
+  },
+  "keywords": [],
+  "author": "Macarena Barrios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macarenabarrios/API-REST-libreria/issues"
+  },
+  "homepage": "https://github.com/macarenabarrios/API-REST-libreria#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.4.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "sequelize": "^6.32.1"
+  }
+}
