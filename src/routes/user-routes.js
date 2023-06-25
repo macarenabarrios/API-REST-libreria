@@ -6,8 +6,6 @@ const userController = require('../controllers/user-controller');
 const router = express.Router();
 
 // Rutas (endpoints)
-router.post("/create-user", userController.createUser);
-router.put("/edit-user/:id", userController.editUser);
 router.post("/login", userController.login);
 
 module.exports = router;

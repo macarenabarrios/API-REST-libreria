@@ -3,54 +3,15 @@ const { User } = require('../models/user-model');
 const jwt = require('jsonwebtoken');
 
 // Crear un usuario
-async function createUser(name, lastname, email, password) {
+async function createUser() {
   try {
     const user = new User();
-    user.name = name;
-    user.lastname = lastname;
-    user.email = email;
-    user.password = password;
+    user.name = "admin";
+    user.password = "admin";
     const userCreated = await user.save();
     return userCreated;
   } catch (error) {
-    throw new Error("Error, usuario no creado");
-  }
-};
-
-// Editar usuario
-async function editUser(id, name, lastname, email) {
-  try {
-    const user = await getUserById(id);
-    if (!user) {
-      throw new Error("Error, usuario no encontrado");
-    }
-    // Manejar error si !user
-    if (name) {
-      user.name = name;
-    }
-    if (lastname) {
-      user.lastname = lastname;
-    }
-    if (email) {
-      user.email = email;
-    }
-    const userEdited = await user.save();
-    return userEdited;
-  } catch (error) {
-    throw new Error(error);
-  }
-};
-
-// Obtener un usuario
-async function getUserById(id) {
-  try {
-    const user = await User.findByPk(id);
-    if (user === null) {
-      throw new Error("Usuario no encontrado");
-    }
-    return user;
-  } catch (error) {
-    throw new Error(error);
+    throw new Error("Error, usuario admin no creado");
   }
 };
 
@@ -76,4 +37,4 @@ async function login(name, password) {
   };
 };
 
-module.exports = { createUser, editUser, login };
+module.exports = { createUser, login };
